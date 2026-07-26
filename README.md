@@ -1,52 +1,103 @@
 # QSIS-ACADEMIC-FILES-MANAFGER
 
-Academic file storage for the **QSIS-ARMS** platform — Department of Qur'anic Sciences & Islamic Studies, IIUC.
+Academic file storage for the **QSIS-ARMS** platform — International Islamic University Chittagong (IIUC).
 
 ## Browse Files
 Files are viewable at **[qsis-arms.eu.cc](https://qsis-arms.eu.cc)**
 
-## Structure
+## New Structure (All Departments)
+
 ```
 upload_academic_files/
-├── 1st-semister/
-├── 2nd-semister/
-├── 3rd-semister/
-├── 4th-semister/
-├── 5th-semister/
-├── 6th-semister/
-├── 7th-semister/
-├── 8th-semister/
-└── related-kitabs/    ← Cross-semester & Shariah resources
+├── qsis/           ← Qur'anic Sciences & Islamic Studies
+│   ├── 1st-semister/
+│   │   ├── sheet/
+│   │   ├── NOTES/
+│   │   ├── Previous Questions/
+│   │   ├── Syllabus/
+│   │   └── Other/
+│   ├── 2nd-semister/
+│   └── ...
+├── cse/            ← Computer Science & Engineering
+├── cce/            ← Computer & Communication Engineering
+├── eee/            ← Electrical & Electronic Engineering
+├── ete/            ← Electronic & Telecommunication Engineering
+├── civil/          ← Civil Engineering
+├── pharmacy/       ← Pharmacy
+├── ba/             ← Business Administration
+├── finance/        ← Department of Finance
+├── ell/            ← English Language & Literature
+├── all/            ← Arabic Language & Literature
+├── lis/            ← Library & Information Science
+├── law/            ← Department of Law
+├── eb/             ← Economics & Banking
+├── cge/            ← Center for General Education
+├── dawah/          ← Da'wah & Islamic Studies
+├── hadith/         ← Science of Hadith & Islamic Studies
+└── related-kitabs/ ← Cross-semester & Shariah resources
 ```
 
-Each semester contains:
-- `sheet/` — Lecture sheets
-- `question/` — Previous year questions
-- `note/` — Course notes
-- `syllabus/` — Course syllabi
+## Department Folder IDs
 
-## How to Contribute
+| Department | Folder ID | Faculty |
+|---|---|---|
+| Qur'anic Sciences & Islamic Studies | `qsis` | Shariah & Islamic Studies |
+| Da'wah & Islamic Studies | `dawah` | Shariah & Islamic Studies |
+| Science of Hadith & Islamic Studies | `hadith` | Shariah & Islamic Studies |
+| Computer Science & Engineering | `cse` | Science & Engineering |
+| Computer & Communication Engineering | `cce` | Science & Engineering |
+| Electrical & Electronic Engineering | `eee` | Science & Engineering |
+| Electronic & Telecommunication Engineering | `ete` | Science & Engineering |
+| Civil Engineering | `civil` | Science & Engineering |
+| Pharmacy | `pharmacy` | Science & Engineering |
+| Business Administration | `ba` | Business Studies |
+| Department of Finance | `finance` | Business Studies |
+| English Language & Literature | `ell` | Arts & Humanities |
+| Arabic Language & Literature | `all` | Arts & Humanities |
+| Library & Information Science | `lis` | Arts & Humanities |
+| Department of Law | `law` | Law |
+| Economics & Banking | `eb` | Social Science |
+| Center for General Education | `cge` | General Education |
 
-### Option 1: Via QSIS-ARMS (Easy)
-1. Go to [qsis-arms.eu.cc](https://qsis-arms.eu.cc)
-2. Sign in with your IIUC email
-3. Click Upload → Connect GitHub → Submit files
+## Upload Path Format
 
-### Option 2: Fork & PR
-1. Fork this repository
-2. Add files to the correct `semester/category/course/` folder
-3. Create a Pull Request
+**New uploads:**
+```
+upload_academic_files/{department}/{semester}/{category}/{CourseCode-CourseTitle}/{filename}
+```
 
-## Web App
-The QSIS-ARMS web app is in a separate repo:
-- **[QSIS-ARMS-v2](https://github.com/sayedatiqurrahman/QSIS-ARMS-v2)** — Next.js frontend
+**Example:**
+```
+upload_academic_files/cse/3rd-semister/sheet/FSC-1208-IslamicStudies/Midterm-Sheet.pdf
+```
 
-## Star & Fork
-If you find this useful:
-- **Star** this repo to show support
-- **Fork** to contribute academic files
+## Categories
 
-## Contact
-- [QSIS Facebook](https://www.facebook.com/DQSIS)
-- [IIUC Website](https://www.iiuc.ac.bd)
-- Developer: [Sayed Atiqur Rahman](https://github.com/sayedatiqurrahman)
+| Category | Folder Name |
+|---|---|
+| Sheets | `sheet` |
+| Notes | `NOTES` |
+| Previous Questions | `Previous Questions` |
+| Syllabus | `Syllabus` |
+| Other | `Other` |
+
+## Semesters
+
+`1st-semister`, `2nd-semister`, `3rd-semister`, `4th-semister`, `5th-semister`, `6th-semister`, `7th-semister`, `8th-semister`
+
+## Contributing
+
+1. **Fork** this repository
+2. Navigate to `upload_academic_files/{your-department}/{semester}/{category}/{CourseCode-CourseTitle}/`
+3. Upload your files
+4. Create a **Pull Request**
+
+> **Note:** Only IIUC departmental emails (`@ugrad.iiuc.ac.bd` or `@iiuc.ac.bd`) are accepted.
+
+## Legacy Files
+
+Files in semester folders directly under `upload_academic_files/` (without a department folder) are legacy QSIS files. They remain accessible for backward compatibility.
+
+---
+
+*Presented by **Programming Light** & Developed by **Sayed Atiqur Rahman***
