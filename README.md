@@ -5,39 +5,38 @@ Academic file storage for the **QSIS-ARMS** platform — International Islamic U
 ## Browse Files
 Files are viewable at **[qsis-arms.eu.cc](https://qsis-arms.eu.cc)**
 
-## New Structure (All Departments)
+## Folder Structure
+
+Every department follows this course-based structure:
 
 ```
-upload_academic_files/
-├── qsis/           ← Qur'anic Sciences & Islamic Studies
-│   ├── 1st-semister/
-│   │   ├── sheet/
-│   │   ├── NOTES/
-│   │   ├── Previous Questions/
-│   │   ├── Syllabus/
-│   │   └── Other/
-│   ├── 2nd-semister/
-│   └── ...
-├── cse/            ← Computer Science & Engineering
-├── cce/            ← Computer & Communication Engineering
-├── eee/            ← Electrical & Electronic Engineering
-├── ete/            ← Electronic & Telecommunication Engineering
-├── civil/          ← Civil Engineering
-├── pharmacy/       ← Pharmacy
-├── ba/             ← Business Administration
-├── finance/        ← Department of Finance
-├── ell/            ← English Language & Literature
-├── all/            ← Arabic Language & Literature
-├── lis/            ← Library & Information Science
-├── law/            ← Department of Law
-├── eb/             ← Economics & Banking
-├── cge/            ← Center for General Education
-├── dawah/          ← Da'wah & Islamic Studies
-├── hadith/         ← Science of Hadith & Islamic Studies
-└── related-kitabs/ ← Cross-semester & Shariah resources
+upload_academic_files/{department}/{semester}/{CODE} - {Title}/
+├── Mid/
+│   ├── NOTES/
+│   └── Previous Questions/
+├── Final/
+│   ├── NOTES/
+│   └── Previous Questions/
+├── sheet/
+├── Syllabus/
+└── Other/
 ```
 
-## Department Folder IDs
+**Example:**
+```
+upload_academic_files/qsis/6th-semister/QSM-3601 - Ulumul Quran/
+├── Mid/
+│   ├── NOTES/
+│   └── Previous Questions/
+├── Final/
+│   ├── NOTES/
+│   └── Previous Questions/
+├── sheet/
+├── Syllabus/
+└── Other/
+```
+
+## Departments
 
 | Department | Folder ID | Faculty |
 |---|---|---|
@@ -59,44 +58,30 @@ upload_academic_files/
 | Economics & Banking | `eb` | Social Science |
 | Center for General Education | `cge` | General Education |
 
-## Upload Path Format
-
-**New uploads:**
-```
-upload_academic_files/{department}/{semester}/{category}/{CourseCode-CourseTitle}/{filename}
-```
-
-**Example:**
-```
-upload_academic_files/cse/3rd-semister/sheet/FSC-1208-IslamicStudies/Midterm-Sheet.pdf
-```
-
-## Categories
-
-| Category | Folder Name |
-|---|---|
-| Sheets | `sheet` |
-| Notes | `NOTES` |
-| Previous Questions | `Previous Questions` |
-| Syllabus | `Syllabus` |
-| Other | `Other` |
-
 ## Semesters
 
 `1st-semister`, `2nd-semister`, `3rd-semister`, `4th-semister`, `5th-semister`, `6th-semister`, `7th-semister`, `8th-semister`
 
+## How to Upload
+
+1. Navigate to your department → semester → course
+2. Select **Mid** or **Final** exam section
+3. Choose category: **NOTES**, **Previous Questions**, **sheet**, **Syllabus**, or **Other**
+4. Upload your file — it will be placed in the correct folder automatically
+
+Or manually:
+```
+upload_academic_files/{department}/{semester}/{CODE} - {Title}/{Mid|Final}/{NOTES|Previous Questions}/{filename}
+```
+
 ## Contributing
 
 1. **Fork** this repository
-2. Navigate to `upload_academic_files/{your-department}/{semester}/{category}/{CourseCode-CourseTitle}/`
-3. Upload your files
+2. Navigate to `upload_academic_files/{your-department}/{semester}/{CODE} - {Title}/`
+3. Upload your files into the correct category folder
 4. Create a **Pull Request**
 
 > **Note:** Only IIUC departmental emails (`@ugrad.iiuc.ac.bd` or `@iiuc.ac.bd`) are accepted.
-
-## Legacy Files
-
-Files in semester folders directly under `upload_academic_files/` (without a department folder) are legacy QSIS files. They remain accessible for backward compatibility.
 
 ---
 
