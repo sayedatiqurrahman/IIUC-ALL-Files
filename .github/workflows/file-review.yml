@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Verify Changes are in upload_academic_files only
@@ -24,7 +25,7 @@ jobs:
         with:
           script: |
             const { execSync } = require('child_process');
-            const files = execSync(`git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD`).toString().trim().split('\n').filter(Boolean);
+            const files = execSync(`git diff --name-only ${{ github.event.pull_request.base.sha }}...HEAD`).toString().trim().split('\n').filter(Boolean);
             const badFiles = files.filter(f => !f.startsWith('upload_academic_files/'));
             if (badFiles.length > 0) {
               core.setFailed(`Changes outside upload_academic_files/ detected: ${badFiles.join(', ')}`);
@@ -69,7 +70,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `## ❌ Missing Information\n\nPlease fill in these fields at the top of your PR description:\n\n- **Your Name** — as you want it to appear on the site\n- **QSIS ID Number** — your student/QSIS ID\n- **WhatsApp Number** — with country code\n\n> ⚠️ QSIS ID is required. Submissions without a valid QSIS ID will not be approved.\n\n---\n*This is an automated check by QSIS-ARMS Bot.*`
+              body: `## ❌ Missing Information\n\nPlease fill in these fields at the top of your PR description:\n\n- **Your Name** — as you want it to appear on the site\n- **QSIS ID Number** — your student/QSIS ID\n- **WhatsApp Number** — with country code\n\n> ⚠️ QSIS ID is required. Submissions without a valid QSIS ID will not be approved.\n\n---\n*This is an automated check by IIUC-ARMS Bot.*`
             });
 
       - name: Comment - Info Verified
@@ -83,7 +84,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `## ✅ Thanks ${name}!\n\n| Field | Value |\n|-------|-------|\n| **Name** | ${name} |\n| **QSIS ID** | ${qsId} |\n\nYour files will be reviewed and merged. Credit will appear on the [QSIS-ARMS contributors page](https://qsis-arms.eu.cc/#/contributors).`
+              body: `## ✅ Thanks ${name}!\n\n| Field | Value |\n|-------|-------|\n| **Name** | ${name} |\n| **QSIS ID** | ${qsId} |\n\nYour files will be reviewed and merged. Credit will appear on the [IIUC-ARMS contributors page](https://iiuc-arms.eu.cc/contributors).`
             });
 
       - name: Validate File Structure
@@ -92,7 +93,7 @@ jobs:
           echo "## 📋 File Validation Report" > report.md
           echo "" >> report.md
 
-          FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD)
+          FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }}...HEAD)
           HAS_ERROR=false
 
           echo "### Files Changed:" >> report.md
@@ -179,7 +180,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD)
+          FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }}...HEAD)
           IS_RELATED_KITABS=false
 
           for file in $FILES; do
