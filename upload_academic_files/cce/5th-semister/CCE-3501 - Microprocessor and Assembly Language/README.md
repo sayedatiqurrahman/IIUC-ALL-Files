@@ -1,1 +1,1 @@
-- [ Microprocessor mid questions compile ](https://drive.google.com/file/d/1yW9PxogbuBRylw6sGoOaeoV_BQ-Pe4wr/view?usp=drive_link)
+- [ Microprocessor mid resourse](https://drive.google.com/drive/folders/1s4IBEJ5QfYN8UIYKCfpEATiJbZpcOSEO?usp=drive_link)
