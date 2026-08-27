@@ -1,0 +1,1 @@
+- [URED Mid Resource](https://drive.google.com/drive/folders/1w9FGGctsH--H3pSwGP8xf6y4DvLk6UZs?usp=drive_link)
