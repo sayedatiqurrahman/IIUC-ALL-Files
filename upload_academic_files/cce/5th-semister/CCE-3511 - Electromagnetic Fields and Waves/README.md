@@ -1,0 +1,1 @@
+- [ E.M.F Mid Resource ](https://drive.google.com/drive/folders/1YKwjfVVyI-mrORTcp2yOd4Q0TnwqQNnr?usp=drive_link)
