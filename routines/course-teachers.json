@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "updatedAt": 1787933668301,
+  "updatedBy": "eb263013@ugrad.iiuc.ac.bd",
+  "departments": {
+    "eb": {
+      "1st Semester": [
+        {
+          "code": "ECON-1101",
+          "title": "Principles of Microeconomics",
+          "teacher": "Md Amranul Hoque",
+          "room": "503"
+        },
+        {
+          "code": "MATH-1101",
+          "title": "Fundamentals of Mathematical Economics",
+          "teacher": "Joynal Uddin",
+          "room": "503"
+        },
+        {
+          "code": "COM-1101",
+          "title": "Computer Applications",
+          "teacher": "Rahat",
+          "room": "LAB"
+        },
+        {
+          "code": "GEEL-1103",
+          "title": "Advanced English",
+          "teacher": "Tauhidul Islam",
+          "room": "503"
+        },
+        {
+          "code": "GEEM-1101",
+          "title": "Text of Ethics and Morality-I",
+          "teacher": "Dr. Md. Moazzam Hossain Khan",
+          "room": "302"
+        }
+      ]
+    }
+  }
+}
